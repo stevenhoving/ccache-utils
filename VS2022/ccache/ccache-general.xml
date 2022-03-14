@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rule
+      Name="CCacheGeneral"
+      DisplayName="ccache"
+      PageTemplate="generic"
+      Description="ccache"
+      xmlns="http://schemas.microsoft.com/build/2009/properties">
+  <Rule.Categories>
+    <Category Name="General" DisplayName="General" Description="General" />
+  </Rule.Categories>
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFile" Label="ccache" />
+  </Rule.DataSource>
+
+  <BoolProperty Name="UseCcache"
+                DisplayName="Use ccache"
+                Description="Use ccache for compiling.  If this option is disabled, the Microsoft compiler (cl.exe) will be used instead."
+                Category="General"
+                Default="true">
+  </BoolProperty>
+  <StringProperty Name="CcacheExecutable"
+                  DisplayName="ccache Executable"
+                  Description="Specifies the path to ccache.exe."
+                  Category="General"
+                  Default="$(CcacheInstallDir)\ccache.exe"
+                  Subtype="file">
+  </StringProperty>
+
+  <StringProperty Name="CcacheAdditionalOptions"
+                  DisplayName="Additional Compiler Options"
+                  Description="Additional options to pass to clang.  This is essentially the same as C/C++ > Command Line > Additional Options, except that it is safe to put options here that will be rejected by cl.exe in case you switch toolchains back and forth."
+                  Category="General">
+  </StringProperty>
+
+  <BoolProperty Name="UseLldLink"
+                DisplayName="Use lld-link"
+                Description="Use lld-link for linking.  If this option is disabled, the Microsoft linker (link.exe) will be used instead."
+                Category="General"
+                Default="false">
+  </BoolProperty>
+  <StringProperty Name="LldLinkExecutable"
+                  DisplayName="lld-link Executable"
+                  Description="Specifies the path to lld-link.exe."
+                  Category="General"
+                  Default="$(CcacheInstallDir)\ccache.exe"
+                  Subtype="file">
+  </StringProperty>
+
+  <StringProperty Name="LldLinkAdditionalOptions"
+                  DisplayName="Additional Linker Options"
+                  Description="Additional options to pass to lld-link.  This is essentially the same as General > Linker > Command Line > Additional Options, except that it is safe to put options here that will be rejected by link.exe in case you switch toolchains back and forth."
+                  Category="General">
+  </StringProperty>
+
+  <BoolProperty Name="UseccacheLib"
+                DisplayName="Use ccache-lib"
+                Description="Use ccache-lib for managing libraries.  If this option is disabled, the Microsoft librarian (lib.exe) will be used instead."
+                Category="General"
+                Default="false">
+  </BoolProperty>
+  <StringProperty Name="ccacheLibExecutable"
+                  DisplayName="ccache-lib Executable"
+                  Description="Specifies the path to ccache-lib.exe."
+                  Category="General"
+                  Default="$(ccacheInstallDir)\ccache.exe"
+                  Subtype="file">
+  </StringProperty>
+
+  <StringProperty Name="ccacheLibAdditionalOptions"
+                  DisplayName="Additional Librarian Options"
+                  Description="Additional options to pass to ccache-lib.  This is essentially the same as General > Librarian > Command Line > Additional Options, except that it is safe to put options here that will be rejected by lib.exe in case you switch toolchains back and forth."
+                  Category="General">
+  </StringProperty>
+
+  <BoolProperty Name="UseccacheRc"
+                DisplayName="Use ccache-rc"
+                Description="Use ccache-rc for compiling resources.  If this option is disabled, the Microsoft resource compiler (rc.exe) will be used instead."
+                Category="General"
+                Default="false">
+  </BoolProperty>
+  <StringProperty Name="ccacheRcExecutable"
+                  DisplayName="ccache-rc Executable"
+                  Description="Specifies the path to ccache-rc.exe."
+                  Category="General"
+                  Default="$(ccacheInstallDir)\ccache.exe"
+                  Subtype="file">
+  </StringProperty>
+
+  <StringProperty Name="ccacheRcAdditionalOptions"
+                  DisplayName="Additional Resources Options"
+                  Description="Additional options to pass to ccache-rc.  This is essentially the same as General > Resources > Command Line > Additional Options, except that it is safe to put options here that will be rejected by rc.exe in case you switch toolchains back and forth."
+                  Category="General">
+  </StringProperty>
+</Rule>

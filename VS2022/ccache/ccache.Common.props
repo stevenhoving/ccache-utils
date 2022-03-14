@@ -1,0 +1,23 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!--CcacheInstallDir>D:\tools\ccache-4.6-windows-32</CcacheInstallDir-->
+    <CcacheInstallDir>D:\dev\ccache\vsbuild\Release</CcacheInstallDir>
+    <!--CcacheExecutable>ccache.exe</CcacheExecutable-->
+    <CcacheExecutable>$(CcacheInstallDir)\clcache.cmd</CcacheExecutable>
+    <LldLinkExecutable>$(CcacheInstallDir)\ccache.exe</LldLinkExecutable>
+    <LlvmLibExecutable>$(CcacheInstallDir)\ccache.exe</LlvmLibExecutable>
+    <LlvmRcExecutable>$(CcacheInstallDir)\ccache.exe</LlvmRcExecutable>
+    <UseCcache>true</UseCcache>
+    <UseLldLink>false</UseLldLink>
+    <UseLlvmLib>false</UseLlvmLib>
+    <UseLlvmRc>false</UseLlvmRc>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Short names for platform toolsets (added to project name in Solution Explorer) -->
+    <_PlatformToolsetShortNameFor_ccache_v143>ccache v143</_PlatformToolsetShortNameFor_ccache_v143>
+
+    <!-- Friendly names added to the PlatformToolset in the property pages. -->
+    <_PlatformToolsetFriendlyNameFor_ccache_v143>ccache for Visual Studio 2022 (ccache_v143)</_PlatformToolsetFriendlyNameFor_ccache_v143>
+  </PropertyGroup>
+</Project>
